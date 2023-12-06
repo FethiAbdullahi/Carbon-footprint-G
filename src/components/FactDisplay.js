@@ -13,7 +13,7 @@ const FactDisplay = () => {
   }, []);
 
   const getRandomFact = () => {
-    const randomNo = Math.floor(Math.random() * 20); // Generate random number between 0 and 19
+    const randomNo = Math.ceil(Math.random() * 20); // Generate random number between 0 and 19
     setRandomFact(facts[randomNo]); // Get the fact corresponding to the random number
   };
 

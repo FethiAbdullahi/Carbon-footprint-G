@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PieChart from "./PieChart";
 import BarChart from "./BarChart";
 import "../styles/ChartsAndFigures.css";
@@ -11,8 +11,10 @@ const ChartsAndFigures = ({ data, total }) => {
   } else {
     footprintCategory = "Low Carbon Footprint";
   }
+useEffect(()=>{
+  console.log("total", total);
 
-  console.log("footprintCategory", footprintCategory);
+})
   return (
     <div className="container">
       <h2 className="text-3xl font-bold mb-4 -mt-20 text-center">
@@ -20,7 +22,7 @@ const ChartsAndFigures = ({ data, total }) => {
       </h2>
       <PieChart data={data} />
       <div className="mb-6 text-center">
-        Your annual CO2 emissions amount to <strong>{total.toFixed(2)}</strong>{" "}
+        Your annual CO2 emissions amount to <strong>{Math.ceil(total)}</strong>{" "}
         metric tonnes
       </div>
 

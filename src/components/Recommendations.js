@@ -16,7 +16,8 @@ function Recommendations(props) {
 
   const electricPercentage = electric / total;
   const gasPercentage = gas / total;
-  const flightPercentage = flights / total;
+  const LaptopPcUsageofOwn = numberofpeople / total;
+  const LaptopPcUsageofCompany = numberofpeople / total;
 
   const createRecommendations = () => {
     const recommendations = [];
@@ -59,10 +60,13 @@ function Recommendations(props) {
       recommendations.push("gasPercentage");
     }
 
-    if (flightPercentage > 0.25) {
-      recommendations.push("flightPercentage");
+    if (LaptopPcUsageofOwn > 0.25) {
+      recommendations.push("LaptopPcUsageofOwnPercentage");
     }
 
+    if (LaptopPcUsageofCompany > 0.25) {
+      recommendations.push("LaptopPcUsageofCompanyPercentage");
+    } 
     if (recycle !== 0) {
       recommendations.push("recycle");
     }

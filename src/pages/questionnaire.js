@@ -10,9 +10,9 @@ const QuestionnairePage = () => {
     gasBill: "",
     electricBill: "",
     recycle: false,
-    carMileage: "",
-    flightsUnder4Hours: "",
-    flightsOver4Hours: "",
+    carOwners: "",
+    LaptopPcUsageofOwn: "",
+    LaptopPcUsageofCompany: "",
     vehicleType:"gas",
     electricSource:"naturalGas",
   });
@@ -25,7 +25,7 @@ const QuestionnairePage = () => {
 
     if (type === "text") {
       if (
-        name === "carMileage" ||
+        name === "carOwners" ||
         name === "gasBill" ||
         name === "electricBill"
       ) {
@@ -33,8 +33,8 @@ const QuestionnairePage = () => {
         newValue = value.replace(/[^0-9.]/g, "");
       } else if (
         name === "numberOfPeople" ||
-        name === "flightsUnder4Hours" ||
-        name === "flightsOver4Hours"
+        name === "LaptopPcUsageofOwn" ||
+        name === "LaptopPcUsageofCompany"
       ) {
         // Allow only numeric values
         newValue = value.replace(/[^0-9]/g, "");
@@ -53,26 +53,29 @@ const QuestionnairePage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(questionnaireData, 'handle')
     const unansweredQuestions = Object.keys(questionnaireData).filter(
       (key) => questionnaireData[key] === ""
     );
 
     if (unansweredQuestions.length > 0) {
+      console.log(unansweredQuestions.length);
       setShowPopup(true);
       return;
     }
 
     // Set default value to 0 for fields with empty values
+console.log(questionnaireData, 'before');
     const updatedQuestionnaireData = {
       ...questionnaireData,
       gasBill: questionnaireData.gasBill || 0,
       electricBill: questionnaireData.electricBill || 0,
-      carMileage: questionnaireData.carMileage || 0,
-      flightsUnder4Hours: questionnaireData.flightsUnder4Hours || 0,
-      flightsOver4Hours: questionnaireData.flightsOver4Hours || 0,
+      carOwners: questionnaireData.carOwners || 0,
+      LaptopPcUsageofOwn: questionnaireData.LaptopPcUsageofOwn || 0,
+      LaptopPcUsageofCompany: questionnaireData.LaptopPcUsageofCompany || 0,
     };
-
+console.log(questionnaireData , 'after');
+console.log(updatedQuestionnaireData, 'updated')
     // Redirect to the result page with the questionnaire data
     router.push({
       pathname: "/result",
@@ -92,7 +95,7 @@ const QuestionnairePage = () => {
     <div className="container">
       <div className="backgroundImage"></div>
       <div className="snow"></div>
-      <h1 className="title">Carbon Footprint Questionnaire</h1>
+      <h1 className="title">Gebeya Carbon Footprint Questionnaire</h1>
 
       <div className="progress-bar">
         <div

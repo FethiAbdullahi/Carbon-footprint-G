@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+display: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -20,7 +24,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/backgroundHome.jpg');
+  background-image: url('/images/77.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -146,7 +150,7 @@ body{
 }
 
 .flower, .flower:before, .flower:after {
-  position: absolute;
+  position: relative;
   top: -650px;
   left: 0;
   bottom: 0;

@@ -7,7 +7,7 @@ const HomePage = () => {
       <div className="backgroundImage" />
       <div className="flower" />
       <div className="content">
-        {/* <h1 className="welcometitle">Welcome to the Carbon Footprint Calculator!</h1> */}
+        {/* <h1 className="welcometitle">Welcome to Gebeya Carbon Footprint Calculator!</h1> */}
         <p className="flex justify-center description">
           Take your first step towards a sustainable future.
         </p>

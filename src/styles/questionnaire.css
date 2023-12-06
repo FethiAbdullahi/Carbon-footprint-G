@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+  display: none;
+  }
+  
 .backgroundImage {
   position: fixed;
   top: 0;
@@ -59,6 +63,7 @@
   gap: 10px;
   width: 100%; /* Adjust the width of each column */
   max-width: 375px;
+  overflow: hidden;
 }
 
 .buttonContainer {
@@ -253,7 +258,7 @@ form {
 
 
 .snow, .snow:before, .snow:after {
-  position: absolute;
+  position: fixed;
   top: -650px;
   left: 0;
   bottom: 0;
